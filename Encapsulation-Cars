@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+class Cars
+{
+private:
+    string brand;
+    string model;
+    int year;
+public:
+    void setBrand(string newBrand)
+    {
+        brand=newBrand;
+    }
+    void setModel(string newModel)
+    {
+        model=newModel;
+    }
+    void setYear(int newYear)
+    {
+        if(newYear>1950 && newYear<2023)
+        {
+            year=newYear;
+        }
+        else
+        {
+           cout<<"The year of manufacture of the car was entered incorrectly!"<<endl;
+           year=0;
+        }
+
+    }
+    string getBrand()
+    {
+        return brand;
+    }
+    string getModel()
+    {
+        return model;
+    }
+    int getYear()
+    {
+        return year;
+    }
+
+};
+int main()
+{
+    Cars car1;
+    car1.setBrand("Audi");
+    car1.setYear(2054);
+    cout<<"Brand: "<<car1.getBrand()<<endl;
+    cout<<"year: "<<car1.getYear()<<endl;
+    return 0;
+}
