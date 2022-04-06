@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+struct Cars{
+    int year;
+    int km;
+    int price;
+    string brand;
+    string model;
+};
+
+void updateToPrice(Cars* eklenecekAraba,int newPrice)
+{
+    if(eklenecekAraba->price!=newPrice)
+    {
+        cout<<"Before Price: "<<eklenecekAraba->price<<"$\nSuccessfully changed!"<<endl;
+        eklenecekAraba->price=newPrice;
+        cout<<"After Price: "<<newPrice<<"$"<<endl;
+    }
+
+
+
+}
+void displayTheCar(Cars araba)
+{
+    cout<<"Brand: "<<araba.brand<<"\nMOdel: "<<araba.model<<"\nyear: "<<araba.year<<"\nKm: "<<araba.km<<"\nPrice: "<<araba.price<<"$"<<endl;
+}
+int main()
+{
+    Cars car1;
+    car1.brand="BMW";
+    car1.model="X6";
+    car1.year=2023;
+    car1.km=1258;
+    car1.price=130000;
+    displayTheCar(car1);
+    updateToPrice(&car1,200000);
+    return 0;
+}
